@@ -11,5 +11,54 @@
 }
 
 body {
+  background-image: url(../images/bg-main-mobile.png);
+  background-repeat: no-repeat;
   font-family: "Space Grotesk", sans-serif;
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    aside {
+      flex: 1 1 250px;
+      position: relative;
+      section {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        position: absolute;
+        &.frontCard {
+          background-image: url(../images/bg-card-front.png);
+          background-size: contain;
+          color: $white;
+          height: 157px;
+          width: 286px;
+          display: flex;
+          display: none; //use this to format back card
+          flex-direction: column;
+          justify-content: space-between;
+          img {
+            width: 40px;
+            height: auto;
+          }
+          article {
+            footer {
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+        }
+        &.backCard {
+          background-image: url(../images/bg-card-back.png);
+          background-size: contain;
+          color: $white;
+          height: 157px;
+          width: 286px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
 }
