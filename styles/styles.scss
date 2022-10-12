@@ -13,19 +13,23 @@
 body {
   background-image: url(../images/bg-main-mobile.png);
   background-repeat: no-repeat;
+  background-size: 100% 240px;
   font-family: "Space Grotesk", sans-serif;
   main {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 32px 16px;
     aside {
       flex: 1 1 250px;
       position: relative;
       section {
+        border-radius: 5px;
+        box-shadow: 16px 19px 66px -27px hsla(278, 68%, 11%, 0.6);
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
         position: absolute;
+
         &.frontCard {
           background-image: url(../images/bg-card-front.png);
           background-size: contain;
@@ -37,13 +41,22 @@ body {
           justify-content: space-between;
           width: 286px;
           img {
-            width: 40px;
+            width: 53px;
             height: auto;
           }
           article {
+            & > p {
+              letter-spacing: 2.2px;
+            }
             footer {
               display: flex;
               justify-content: space-between;
+              margin-top: 1em;
+              p {
+                font-size: 0.556rem;
+                letter-spacing: 0.65px;
+                text-transform: uppercase;
+              }
             }
           }
         }
@@ -55,11 +68,73 @@ body {
           display: flex;
           height: 157px;
           justify-content: center;
-          padding-right: 30px;
+          padding-right: 38px;
           right: 0;
           width: 286px;
+          p {
+            font-size: 0.556rem;
+            letter-spacing: 0.65px;
+          }
         }
       }
+    }
+
+    form {
+      margin-top: 50px;
+      padding: 0 8px;
+
+      section {
+        margin-bottom: 22px;
+
+        label {
+          color: $veryDarkViolet;
+          display: block;
+          font-size: 0.7rem;
+          letter-spacing: 1.5px;
+          padding-bottom: 8px;
+          text-transform: uppercase;
+        }
+        input {
+          border: 1px solid $lightGrayViolet;
+          border-radius: 8px;
+          padding: 11px 15px;
+          width: 100%;
+
+          &::placeholder {
+            color: $lightGrayViolet;
+          }
+        }
+
+        p {
+          &:first-child {
+            width: 48%;
+          }
+          &:last-child {
+            width: 52%;
+          }
+
+          span {
+            display: flex;
+            gap: 8px;
+          }
+        }
+        &:last-of-type {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 28px;
+        }
+      }
+      input[type="submit"] {
+        background-color: $veryDarkViolet;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        padding: 16px;
+        width: 100%;
+      }
+    }
+    article.message {
+      display: none;
     }
   }
 }
