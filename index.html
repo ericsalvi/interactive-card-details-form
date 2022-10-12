@@ -35,22 +35,39 @@
     </aside>
 
     <section>
-      <form>
-        Cardholder Name
-        e.g. Jane Appleseed
-        Card Number
-        e.g. 1234 5678 9123 0000
-        Exp. Date (MM/YY)
-        MM
-        YY
-        CVC
-        e.g. 123
-        Confirm
+      <form novalidate>
+        <section>
+          <label for="ccName">Cardholder Name</label>
+          <input id="ccName" type="text" placeholder="e.g. Jane Appleseed"></input>
+        </section>
+        
+        <section>
+          <label for="ccNum">Card Number</label>
+          <input id="ccNum" type="text" placeholder="e.g. 1234 5678 9123 0000"></input>
+        </section>
+
+        <section>
+          <p>
+            <label for="ccExpDate">Exp. Date (MM/YY)</label>
+            <span>
+              <input id="ccExpDate" type="text" placeholder="MM"></input>
+              <input id="ccExpDate" type="text" placeholder="YY"></input>
+            </span>
+          </p>
+          <p>
+            <label for="ccCvc">CVC</label>
+            <input id="ccCvc" type="text" placeholder="e.g. 123"></input>
+          </p>
+        </section>
+
+        <input type="submit" value="Confirm">
       </form>
       <!-- Completed state start -->
-      Thank you!
-      We've added your card details
-      Continue
+      <article class="message">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button>Continue</button>
+      </article>
     </section>
   </main>
   
