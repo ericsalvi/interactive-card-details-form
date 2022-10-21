@@ -13,22 +13,29 @@
 body {
   background-image: url(../images/bg-main-mobile.png);
   background-repeat: no-repeat;
-  background-size: 100% 240px;
+  background-size: clamp(375px, 100vw, 100%) 240px;
   font-family: "Space Grotesk", sans-serif;
+
   main {
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
     padding: 32px 16px;
+    width: clamp(375px, 50vw, 500px);
+
     aside {
-      flex: 1 1 250px;
+      height: 250px;
       position: relative;
+      width: clamp(calc(375px - 32px), calc(100%), 500px);
+
       section {
         border-radius: 5px;
         box-shadow: 16px 19px 66px -27px hsla(278, 68%, 11%, 0.6);
         display: flex;
         flex-direction: column;
+        height: 157px;
         padding: 20px;
         position: absolute;
+        width: 286px;
 
         &.frontCard {
           background-image: url(../images/bg-card-front.png);
@@ -36,10 +43,9 @@ body {
           bottom: 0;
           color: $white;
           display: flex;
-          height: 157px;
           flex-direction: column;
           justify-content: space-between;
-          width: 286px;
+
           img {
             width: 53px;
             height: auto;
@@ -66,11 +72,9 @@ body {
           background-size: contain;
           color: $white;
           display: flex;
-          height: 157px;
           justify-content: center;
           padding-right: 38px;
           right: 0;
-          width: 286px;
           p {
             font-size: 0.556rem;
             letter-spacing: 0.65px;
@@ -78,63 +82,86 @@ body {
         }
       }
     }
-
-    form {
+    & > section {
       margin-top: 50px;
-      padding: 0 8px;
 
-      section {
-        margin-bottom: 22px;
+      & > form {
+        display: none;
+        padding: 0 8px;
 
-        label {
+        section {
+          margin-bottom: 22px;
+
+          label {
+            color: $veryDarkViolet;
+            display: block;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+          }
+          input {
+            border: 1px solid $lightGrayViolet;
+            border-radius: 8px;
+            padding: 11px 15px;
+            width: 100%;
+
+            &::placeholder {
+              color: $lightGrayViolet;
+              font-weight: bold;
+            }
+          }
+
+          p {
+            &:first-child {
+              width: 48%;
+            }
+            &:last-child {
+              width: 52%;
+            }
+
+            span {
+              display: flex;
+              gap: 8px;
+            }
+          }
+          &:last-of-type {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 28px;
+          }
+        }
+        input[type="submit"] {
+          @include button;
+        }
+      }
+
+      & > article {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0 8px;
+
+        img {
+          height: auto;
+          margin-bottom: 16px;
+          width: 80px;
+        }
+        h1 {
           color: $veryDarkViolet;
-          display: block;
-          font-size: 0.7rem;
-          letter-spacing: 1.5px;
-          padding-bottom: 8px;
+          font-size: 1.6rem;
+          letter-spacing: 3px;
           text-transform: uppercase;
         }
-        input {
-          border: 1px solid $lightGrayViolet;
-          border-radius: 8px;
-          padding: 11px 15px;
-          width: 100%;
-
-          &::placeholder {
-            color: $lightGrayViolet;
-          }
-        }
-
         p {
-          &:first-child {
-            width: 48%;
-          }
-          &:last-child {
-            width: 52%;
-          }
-
-          span {
-            display: flex;
-            gap: 8px;
-          }
+          color: $darkGrayViolet;
+          font-weight: bold;
         }
-        &:last-of-type {
-          display: flex;
-          gap: 10px;
-          margin-bottom: 28px;
+        input[type="submit"] {
+          @include button;
+          margin-top: 48px;
         }
       }
-      input[type="submit"] {
-        background-color: $veryDarkViolet;
-        border: none;
-        border-radius: 8px;
-        color: white;
-        padding: 16px;
-        width: 100%;
-      }
-    }
-    article.message {
-      display: none;
     }
   }
 }

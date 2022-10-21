@@ -12,25 +12,29 @@
 body {
   background-image: url(../images/bg-main-mobile.png);
   background-repeat: no-repeat;
-  background-size: 100% 240px;
+  background-size: clamp(375px, 100vw, 100%) 240px;
   font-family: "Space Grotesk", sans-serif;
 }
 body main {
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  max-width: 500px;
   padding: 32px 16px;
+  width: clamp(375px, 50vw, 500px);
 }
 body main aside {
-  flex: 1 1 250px;
+  height: 250px;
   position: relative;
+  width: clamp(343px, 100%, 500px);
 }
 body main aside section {
   border-radius: 5px;
   box-shadow: 16px 19px 66px -27px hsla(278deg, 68%, 11%, 0.6);
   display: flex;
   flex-direction: column;
+  height: 157px;
   padding: 20px;
   position: absolute;
+  width: 286px;
 }
 body main aside section.frontCard {
   background-image: url(../images/bg-card-front.png);
@@ -38,10 +42,8 @@ body main aside section.frontCard {
   bottom: 0;
   color: hsl(0deg, 0%, 100%);
   display: flex;
-  height: 157px;
   flex-direction: column;
   justify-content: space-between;
-  width: 286px;
 }
 body main aside section.frontCard img {
   width: 53px;
@@ -66,24 +68,25 @@ body main aside section.backCard {
   background-size: contain;
   color: hsl(0deg, 0%, 100%);
   display: flex;
-  height: 157px;
   justify-content: center;
   padding-right: 38px;
   right: 0;
-  width: 286px;
 }
 body main aside section.backCard p {
   font-size: 0.556rem;
   letter-spacing: 0.65px;
 }
-body main form {
+body main > section {
   margin-top: 50px;
+}
+body main > section > form {
+  display: none;
   padding: 0 8px;
 }
-body main form section {
+body main > section > form section {
   margin-bottom: 22px;
 }
-body main form section label {
+body main > section > form section label {
   color: hsl(278deg, 68%, 11%);
   display: block;
   font-size: 0.7rem;
@@ -91,44 +94,96 @@ body main form section label {
   padding-bottom: 8px;
   text-transform: uppercase;
 }
-body main form section input {
+body main > section > form section input {
   border: 1px solid hsl(270deg, 3%, 87%);
   border-radius: 8px;
   padding: 11px 15px;
   width: 100%;
 }
-body main form section input::-moz-placeholder {
+body main > section > form section input::-moz-placeholder {
   color: hsl(270deg, 3%, 87%);
+  font-weight: bold;
 }
-body main form section input:-ms-input-placeholder {
+body main > section > form section input:-ms-input-placeholder {
   color: hsl(270deg, 3%, 87%);
+  font-weight: bold;
 }
-body main form section input::placeholder {
+body main > section > form section input::placeholder {
   color: hsl(270deg, 3%, 87%);
+  font-weight: bold;
 }
-body main form section p:first-child {
+body main > section > form section p:first-child {
   width: 48%;
 }
-body main form section p:last-child {
+body main > section > form section p:last-child {
   width: 52%;
 }
-body main form section p span {
+body main > section > form section p span {
   display: flex;
   gap: 8px;
 }
-body main form section:last-of-type {
+body main > section > form section:last-of-type {
   display: flex;
   gap: 10px;
   margin-bottom: 28px;
 }
-body main form input[type=submit] {
+body main > section > form input[type=submit] {
   background-color: hsl(278deg, 68%, 11%);
   border: none;
   border-radius: 8px;
   color: white;
+  cursor: pointer;
+  opacity: 1;
   padding: 16px;
+  transition: all 0.2s ease-in-out;
   width: 100%;
 }
-body main article.message {
-  display: none;
+body main > section > form input[type=submit]:hover {
+  opacity: 0.9;
+}
+body main > section > form input[type=submit]:active {
+  background-color: black;
+  opacity: 1;
+  transform: scale(0.98);
+}
+body main > section > article {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0 8px;
+}
+body main > section > article img {
+  height: auto;
+  margin-bottom: 16px;
+  width: 80px;
+}
+body main > section > article h1 {
+  color: hsl(278deg, 68%, 11%);
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+body main > section > article p {
+  color: hsl(279deg, 6%, 55%);
+  font-weight: bold;
+}
+body main > section > article input[type=submit] {
+  background-color: hsl(278deg, 68%, 11%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  padding: 16px;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  margin-top: 48px;
+}
+body main > section > article input[type=submit]:hover {
+  opacity: 0.9;
+}
+body main > section > article input[type=submit]:active {
+  background-color: black;
+  opacity: 1;
+  transform: scale(0.98);
 }/*# sourceMappingURL=styles.css.map */
