@@ -13,11 +13,11 @@
   <link rel="stylesheet" href="./styles/styles.css">
   
   <title>Frontend Mentor | Interactive card details form</title>
-
 </head>
 <body>
 
   <main>
+
     <aside>   
       <section class="backCard">
         <p>000</p>
@@ -40,18 +40,16 @@
           <label for="ccName">Cardholder Name</label>
           <input id="ccName" type="text" placeholder="e.g. Jane Appleseed"></input>
         </section>
-        
         <section>
           <label for="ccNum">Card Number</label>
           <input id="ccNum" type="text" placeholder="e.g. 1234 5678 9123 0000"></input>
         </section>
-
         <section>
           <p>
-            <label for="ccExpDate">Exp. Date (MM/YY)</label>
+            <label for="ccExpMonth">Exp. Date (MM/YY)</label>
             <span>
-              <input id="ccExpDate" type="text" placeholder="MM"></input>
-              <input id="ccExpDate" type="text" placeholder="YY"></input>
+              <input id="ccExpMonth" type="text" placeholder="MM"></input>
+              <input id="ccExpYear" type="text" placeholder="YY"></input>
             </span>
           </p>
           <p>
@@ -59,14 +57,16 @@
             <input id="ccCvc" type="text" placeholder="e.g. 123"></input>
           </p>
         </section>
-
         <input type="submit" value="Confirm">
       </form>
+
+    
       <!-- Completed state start -->
       <article class="message">
+        <img src="./images/icon-complete.svg" alt="">
         <h1>Thank you!</h1>
         <p>We've added your card details</p>
-        <button>Continue</button>
+        <input type="submit" value="Continue">
       </article>
     </section>
   </main>
